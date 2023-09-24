@@ -37,6 +37,10 @@ public class Reiziger {
         return geboortedatum;
     }
 
+    public ArrayList<OVChipkaart> getOvChipkaarten() {
+        return ovChipkaarten;
+    }
+
     @Override
     public String toString() {
         return "Reiziger{" +
@@ -45,6 +49,7 @@ public class Reiziger {
                 ", tussenvoegsel='" + tussenvoegsel + '\'' +
                 ", achternaam='" + achternaam + '\'' +
                 ", geboortedatum=" + geboortedatum +
+                ", ovChipkaarten=" + ovChipkaarten +
                 '}';
     }
 }

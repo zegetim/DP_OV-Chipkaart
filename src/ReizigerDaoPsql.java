@@ -16,11 +16,12 @@ public class ReizigerDaoPsql implements ReizigerDao{
     public boolean save(Reiziger reiziger) throws SQLException {
         try {
             Statement statement = connection.createStatement();
-            statement.executeQuery("INSERT INTO reiziger (reiziger_id, voorletters, tussenvoegsel, achternaam, geboortedatum) " + "VALUES (" + reiziger.getId() + ", '" +
+            statement.executeUpdate("INSERT INTO reiziger (reiziger_id, voorletters, tussenvoegsel, achternaam, geboortedatum) " + "VALUES (" + reiziger.getId() + ", '" +
                     reiziger.getVoorletters() + "', '" +
                     reiziger.getTussenvoegsel() + "', '" +
                     reiziger.getAchternaam() + "', '" +
                     reiziger.getGeboortedatum() + "')");
+            statement.close();
         }
         catch(SQLException e){
             return false;
@@ -31,11 +32,12 @@ public class ReizigerDaoPsql implements ReizigerDao{
     public boolean updateReiziger(Reiziger reiziger) throws SQLException {
         try {
             Statement statement = connection.createStatement();
-            statement.executeQuery("UPDATE reiziger SET voorletters = '" + reiziger.getVoorletters() + "', " +
+            statement.executeUpdate("UPDATE reiziger SET voorletters = '" + reiziger.getVoorletters() + "', " +
                     "tussenvoegsel = '" + reiziger.getTussenvoegsel() + "', " +
                     "achternaam = '" + reiziger.getAchternaam() + "', " +
                     "geboortedatum = '" + reiziger.getGeboortedatum() + "' " +
                     "WHERE reiziger_id = " + reiziger.getId());
+            statement.close();
         }
         catch(SQLException e){
             return false;
@@ -46,7 +48,7 @@ public class ReizigerDaoPsql implements ReizigerDao{
     @Override
     public boolean deleteReiziger(Reiziger reiziger) throws SQLException {
         Statement statement = connection.createStatement();
-        statement.executeQuery("DELETE FROM reiziger WHERE reiziger_id = " + reiziger.getId() + ";");
+        statement.executeUpdate("DELETE FROM reiziger WHERE reiziger_id = " + reiziger.getId() + ";");
         return true;
     }
 
