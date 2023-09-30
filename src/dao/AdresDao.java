@@ -1,7 +1,7 @@
-package Dao;
+package dao;
 
-import Domain.Adres;
-import Domain.Reiziger;
+import domain.Adres;
+import domain.Reiziger;
 
 import java.sql.SQLException;
 import java.util.List;

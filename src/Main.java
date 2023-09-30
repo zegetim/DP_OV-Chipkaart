@@ -1,10 +1,9 @@
-import Dao.*;
-import Domain.Adres;
-import Domain.OVChipkaart;
-import Domain.Reiziger;
+import dao.*;
+import domain.Adres;
+import domain.OVChipkaart;
+import domain.Reiziger;
 
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Main {

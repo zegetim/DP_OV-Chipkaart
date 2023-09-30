@@ -1,6 +1,6 @@
-package Dao;
+package dao;
 
-import Domain.Reiziger;
+import domain.Reiziger;
 
 import java.sql.SQLException;
 import java.util.List;

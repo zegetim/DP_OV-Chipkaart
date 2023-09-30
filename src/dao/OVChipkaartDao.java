@@ -1,7 +1,7 @@
-package Dao;
+package dao;
 
-import Domain.OVChipkaart;
-import Domain.Reiziger;
+import domain.OVChipkaart;
+import domain.Reiziger;
 
 import java.sql.SQLException;
 import java.util.List;

@@ -1,9 +1,7 @@
-package Dao;
+package dao;
 
-import Dao.ReizigerDao;
-import Domain.Adres;
-import Domain.OVChipkaart;
-import Domain.Reiziger;
+import domain.Adres;
+import domain.Reiziger;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

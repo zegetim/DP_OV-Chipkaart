@@ -1,8 +1,7 @@
-package Dao;
+package dao;
 
-import Dao.OVChipkaartDao;
-import Domain.OVChipkaart;
-import Domain.Reiziger;
+import domain.OVChipkaart;
+import domain.Reiziger;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

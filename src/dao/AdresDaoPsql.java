@@ -1,8 +1,7 @@
-package Dao;
+package dao;
 
-import Dao.AdresDao;
-import Domain.Adres;
-import Domain.Reiziger;
+import domain.Adres;
+import domain.Reiziger;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
