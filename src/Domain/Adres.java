@@ -1,3 +1,5 @@
+package Domain;
+
 public class Adres {
     private int id;
     private String postcode;
@@ -12,6 +14,15 @@ public class Adres {
         this.huisnummer = huisnummer;
         this.straat = straat;
         this.woonplaats = woonplaats;
+    }
+
+    public Adres(int id, String postcode, int huisnummer, String straat, String woonplaats, int reizigerid) {
+        this.id = id;
+        this.postcode = postcode;
+        this.huisnummer = huisnummer;
+        this.straat = straat;
+        this.woonplaats = woonplaats;
+        this.reizigerid = reizigerid;
     }
 
     public int getId() {
@@ -32,6 +43,14 @@ public class Adres {
 
     public String getWoonplaats() {
         return woonplaats;
+    }
+
+    public int getReizigerid() {
+        return reizigerid;
+    }
+
+    public void setReizigerid(int reizigerid) {
+        this.reizigerid = reizigerid;
     }
 
     @Override

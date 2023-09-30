@@ -1,3 +1,9 @@
+package Dao;
+
+import Dao.OVChipkaartDao;
+import Domain.OVChipkaart;
+import Domain.Reiziger;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -5,7 +11,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OVChipkaartDaoPsql implements OVChipkaartDao{
+public class OVChipkaartDaoPsql implements OVChipkaartDao {
     private Connection connection;
 
     public OVChipkaartDaoPsql(Connection connection) {
