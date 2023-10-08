@@ -1,6 +1,7 @@
 import dao.*;
 import domain.Adres;
 import domain.OVChipkaart;
+import domain.Product;
 import domain.Reiziger;
 
 import java.sql.*;
@@ -15,12 +16,15 @@ public class Main {
         while (resultSet.next()){
             System.out.println(resultSet.getString("achternaam") + " " + resultSet.getString("voorletters") + " (" + resultSet.getDate("geboortedatum") + ")");
         }
+        ProductDaoPsql productDaoPsql = new ProductDaoPsql(connection);
         ReizigerDaoPsql rdao = new ReizigerDaoPsql(connection);
         AdresDaoPsql adresDaoPsql = new AdresDaoPsql(connection);
         OVChipkaartDaoPsql ovdao = new OVChipkaartDaoPsql(connection);
+
         testReizigerDAO(rdao);
         testAdresDao(adresDaoPsql);
         testOVChipDAO(ovdao);
+        testProductOvchip(productDaoPsql,ovdao);
         statement.close();
         resultSet.close();
     }
@@ -89,9 +93,32 @@ public class Main {
         Adres adres1 = adresDao.findByReiziger(new Reiziger(77, "S", "", "Boers", java.sql.Date.valueOf(gbdatum)));
         System.out.println(adres1);
     }
+
     private static void testOVChipDAO(OVChipkaartDao ovdao) throws SQLException {
         String datum = "2025-01-01";
         OVChipkaart ovChipkaart = new OVChipkaart(11111,java.sql.Date.valueOf(datum),2,10);
         ovdao.save(ovChipkaart);
+    }
+
+    private static void testProductOvchip(ProductDao productDao, OVChipkaartDao ovChipkaartDao) throws SQLException {
+        String gbdatum = "1990-01-01";
+        String datum = "2025-01-01";
+        Reiziger reiziger = new Reiziger(123,"t", "", "test" ,java.sql.Date.valueOf(gbdatum));
+        OVChipkaart ovChipkaart = new OVChipkaart(22222,java.sql.Date.valueOf(datum),2,10, reiziger);
+        ovChipkaartDao.save(ovChipkaart);
+        Product product = new Product(12, "testProduct", "Een product om de opdracht te testen", 0.80);
+        product.addOvchipkaart(ovChipkaart);
+        productDao.save(product);
+
+        List<Product> productList = productDao.findByOVChipkaart(ovChipkaart);
+        for(Product p : productList){
+            System.out.println("Product bij OVChipkaart: " + p.toString());
+        }
+
+        List<Product> productList2 = productDao.findAll();
+        System.out.println("Producten:");
+        for(Product p : productList2){
+            System.out.println(p.toString());
+        }
     }
 }

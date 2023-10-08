@@ -40,7 +40,7 @@ public class AdresDaoPsql implements AdresDao {
     public boolean update(Adres adres) {
         try {
             Statement statement = connection.createStatement();
-            statement.executeUpdate("UPDATE reiziger SET postcode = '" + adres.getPostcode() + "', " +
+            statement.executeUpdate("UPDATE adres SET postcode = '" + adres.getPostcode() + "', " +
                     "huisnummer = '" + adres.getHuisnummer() + "', " +
                     "straat = '" + adres.getStraat() + "', " +
                     "woonplaats = '" + adres.getWoonplaats() + "' " +
