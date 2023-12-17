@@ -20,15 +20,6 @@ public class Reiziger {
         this.geboortedatum = geboortedatum;
     }
 
-    public Reiziger(int id, String voorletters, String tussenvoegsel, String achternaam, Date geboortedatum, Adres adres) {
-        this.id = id;
-        this.voorletters = voorletters;
-        this.tussenvoegsel = tussenvoegsel;
-        this.achternaam = achternaam;
-        this.geboortedatum = geboortedatum;
-        this.adres = adres;
-    }
-
     public boolean voegToeOVChipkaart(OVChipkaart ovChipkaart){
         if(!ovChipkaarten.contains(ovChipkaart)){
             ovChipkaarten.add(ovChipkaart);

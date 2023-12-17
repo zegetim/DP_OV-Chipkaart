@@ -102,7 +102,6 @@ public class OVChipkaartDaoPsql implements OVChipkaartDao {
             OVChipkaart ovChipkaart = new OVChipkaart(resultset.getInt("kaart_nummer"), resultset.getDate("geldig_tot"), resultset.getInt("klasse"), resultset.getDouble("saldo"));
             List<Product> producten = productDao.findByOVChipkaart(ovChipkaart);
             ovChipkaart.setProducten(producten);
-//            ovChipkaart.setReiziger(reiziger);
             ovchipkaarten.add(ovChipkaart);
         }
         preparedStatement.close();
