@@ -58,7 +58,6 @@ public class Product {
                 ", naam='" + naam + '\'' +
                 ", beschrijving='" + beschrijving + '\'' +
                 ", prijs=" + prijs +
-                ", ovchipkaarten=" + ovchipkaarten +
                 '}';
     }
 }

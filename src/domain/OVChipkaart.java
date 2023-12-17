@@ -61,10 +61,17 @@ public class OVChipkaart {
         return reiziger;
     }
 
+    public void setReiziger(Reiziger reiziger) {
+        this.reiziger = reiziger;
+    }
+
     public List<Product> getProducten() {
         return producten;
     }
 
+    public void setProducten(List<Product> producten) {
+        this.producten = producten;
+    }
 
     @Override
     public String toString() {
@@ -73,7 +80,7 @@ public class OVChipkaart {
                 ", geldig=" + geldig +
                 ", klasse=" + klasse +
                 ", saldo=" + saldo +
-                ", reiziger=" + reiziger +
+                ", producten=" + producten +
                 '}';
     }
 }

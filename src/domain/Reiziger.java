@@ -66,15 +66,35 @@ public class Reiziger {
         return adres;
     }
 
+    public ArrayList<OVChipkaart> getOvChipkaarten() {
+        return ovChipkaarten;
+    }
+
+    public void setAdres(Adres adres) {
+        this.adres = adres;
+    }
+
     @Override
     public String toString() {
-        return "Reiziger{" +
+        String reiziger = "Reiziger{" +
                 "id=" + id +
                 ", voorletters='" + voorletters + '\'' +
                 ", tussenvoegsel='" + tussenvoegsel + '\'' +
                 ", achternaam='" + achternaam + '\'' +
-                ", geboortedatum=" + geboortedatum +
-                ", adres=" + adres +
-                '}';
+                ", geboortedatum=" + geboortedatum;
+                if(adres!=null) {
+                    reiziger += ", adres=" + adres;
+                }
+                else{
+                    reiziger += "geen adres";
+                }
+                if(ovChipkaarten!=null) {
+                    reiziger += ", ovChipkaarten=" + ovChipkaarten ;
+                }
+                else {
+                    reiziger += "geen ovchipkaarten";
+                }
+                reiziger += '}';
+                return reiziger;
     }
 }
